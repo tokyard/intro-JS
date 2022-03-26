@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Introdução ao JS - Carrinho de Compras</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script>
+
+
+
+      
+alert ("Bem-vindo ao Carrinho de Compras! Faça o Login.");
+      
+      function mudar(){
+        document.getElementById("visitante").innerHTML = document.getElementById("nome").value;
+      }
+
+      function produto(acao) {
+        var uni1 = parseInt(document.getElementById("uni1").innerHTML);
+        var preco1 = parseFloat(document.getElementById("preco1").innerHTML);
+        var uni2 = parseInt(document.getElementById("uni2").innerHTML);
+        var preco2 = parseFloat(document.getElementById("preco2").innerHTML);
+
+        switch(acao){
+                case 'ype1':
+                  document.getElementById("uni1").innerHTML = uni1 + 1;
+                  document.getElementById("preco1").innerHTML = preco1 + 11.99;
+                  break;
+                case 'ype2':
+                  document.getElementById("uni1").innerHTML = uni1 - 1;
+                  document.getElementById("preco1").innerHTML = preco1 - 11.99;
+
+                  break;
+                case 'qboa1':
+                  document.getElementById("uni2").innerHTML = uni2 + 1;
+                  document.getElementById("preco2").innerHTML = preco2 + 14.99;
+                  break;
+                case 'qboa2':
+                  document.getElementById("uni2").innerHTML = uni2 - 1;
+                  document.getElementById("preco2").innerHTML = preco2 - 14.99;
+                  break;
+            }
+      }
+
+      function concluir(){
+        window.location.href = window.location.href;
+      }
+
+    </script>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+body{
+
+background-image: url(img/fundo.jpg);
+
+
+      }
+      .topo {
+   height: 50px;
+   width: auto;
+   margin: auto;
+   background: #b92c00;
+}
+
+a{
+
+  font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Secular One', sans-serif;
+
+
+}
+
+button{
+
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+td{
+
+  font-family: 'Oswald', sans-serif;
+
+}
+    </style>
+
+</head>
+<body>
+
+  <header>
+<div class="topo">
+            <a class="nav-link" id = "visitante" href="#" style="color:rgb(255, 255, 255); text-align: right; ">Visitante
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+            </a>
+
+  </div>
+    <br>
+    <form id="form" style="padding-left: 5vw; padding-right: 5vw;">
+
+      <br>
+      <div class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-12">
+        <input type="text" class="form-control" required type="text" name="nome" id="nome" placeholder="Digite o seu nome" value="">
+      </div>
+      <div class="col-12">
+        <button type="button" class="btn btn-dark" id="" value="Enviar" onclick="mudar()">Logar</button>
+      </div>
+      </div>
+        <br>
+        <table class="table table-light" border="5">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+            <tr>
+              <th scope="row" rowspan="3"><img src="img/ype.png" style="width: 20vw;"></th>
+              <td>Água Sanitária Ypê 5L</td>
+              <td><button type="button" class="btn btn-dark" onclick="produto('ype1')">+</button></td>
+              <td></td>
+              <td>Preço Total</td>
+            </tr>
+            <tr>
+              <td>Preço: 11.99</td>
+              <td id="uni1">0</td>
+              <td>R$</td>
+              <td id="preco1">0.00</td>
+            </tr>
+            <tr>
+              <td></td>
+              
+            <td><button type="button" class="btn btn-dark" onclick="produto('ype2')">-</button></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <table class="table table-light" border="5">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+                <tr>
+                  <th scope="row" rowspan="3"><img src="img/qboa.png" style="width: 20vw;"></th>
+                  <td>Água Sanitária Ypê 5L</td>
+                  <td><button type="button" class="btn btn-dark" onclick="produto('qboa1')">+</button></td>
+                  <td></td>
+                  <td>Preço Total</td>
+                </tr>
+                <tr>
+                  <td>Preço: 14.99</td>
+                  <td id="uni2">0</td>
+                  <td>R$</td>
+                  <td id="preco2">0.00</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  
+                <td><button type="button" class="btn btn-dark" onclick="produto('qboa2')">-</button></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <table>
+        <br>
+        <center>
+        <div class="d-grid gap-2 d-md-block">
+        <button type="button" class="btn btn-dark" id="" value="Enviar" onclick="concluir();alert('Compra Finalizada')">Finalizar Compra</button>
+        </div>
+        </center>
+    </form>
+    <br><br>
+    </content>
+    <footer class="" id="">
+    </footer>
+</body>
+</html>
